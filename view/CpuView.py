@@ -38,7 +38,6 @@ class CpuView:
                 ]
             )
         
-        print('\n\n');
         print(table_resultado);
         print('\n\n');
 
@@ -59,6 +58,5 @@ class CpuView:
             
         ])
            
-        print('\n\n');
         print(table_resultado);
         print('\n\n');

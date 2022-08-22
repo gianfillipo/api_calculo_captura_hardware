@@ -1,11 +1,12 @@
 import pymysql.cursors;
 from dotenv import load_dotenv;
 import os;
+import traceback;
 
 class BancoMySql:
 
     def __init__(self):
-        load_dotenv('../.env');
+        load_dotenv('./.env');
         
         self.host = os.getenv('HOST');
         self.user = os.getenv('USER-BANCO');
@@ -24,5 +25,7 @@ class BancoMySql:
                 password=self.password,
                 cursorclass=self.cursorclass
             )
-        except:
+        except Exception:
             print("Houve um erro na conexão com o banco");
+            traceback.print_exc();
+            

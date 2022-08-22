@@ -1,10 +1,4 @@
-import sys
 import time;
-sys.path.append('..');
-from model.Memoria import Memoria;
-from view.MemoriaView import MemoriaView;
-from dao.MemoriaDao import MemoriaDao;
-from database.config import BancoMySql;
 
 class MemoriaController:
 
@@ -23,7 +17,7 @@ class MemoriaController:
     @staticmethod
     def pergunta_informacao_cpu():
         
-        print("Digite o número do que deseja acessar\n");
+        print("\n\nDigite o número do que deseja acessar\n");
         print(
             "(1) Especificações Memória e Swap\n"+
             "(2) Dados Memória\n"+
@@ -118,6 +112,7 @@ class MemoriaController:
                 
                 while(tempo_segundos < self.quanto_tempo):
                     
+                    print(f"\n{tempo_segundos + 1})")
                     dados = self.associar_index_com_informacao();
                     tempo_segundos += 1;
                     if(self.enviar_banco):
@@ -134,12 +129,3 @@ class MemoriaController:
         
         except:
             print("Houve um erro ao inserir os dados no banco");
-
-
-model = Memoria();
-view = MemoriaView();
-banco = BancoMySql();
-dao = MemoriaDao;
-
-teste = MemoriaController(model, view, banco, dao);
-teste.iniciar()

@@ -30,7 +30,6 @@ class DiscoView:
             informacoes_disco["livre"],
         ])
 
-        print('\n\n');
         print(table_resultado);
         print('\n\n');
 

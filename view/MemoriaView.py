@@ -35,7 +35,6 @@ class MemoriaView:
             dados_memoria["memoria_compartilhada"]
         ])
 
-        print('\n\n');
         print(tabela_memoria);
         print('\n\n');
 
@@ -50,6 +49,5 @@ class MemoriaView:
             dados_swap["swap_livre"] 
         ])
 
-        print('\n\n');
         print(tabela_swap);        
         print('\n\n');

@@ -1,10 +1,5 @@
-import sys
+import traceback;
 import time;
-sys.path.append('..');
-from model.Disco import Disco;
-from view.DiscoView import DiscoView;
-from dao.DiscoDao import DiscoDao;
-from database.config import BancoMySql;
 
 class DiscoController:
 
@@ -23,7 +18,7 @@ class DiscoController:
     @staticmethod
     def pergunta_informacao_cpu():
         
-        print("Digite o número do que deseja acessar\n");
+        print("\n\nDigite o número do que deseja acessar\n");
         print(
             "(1) Total disco\n"+
             "(2) Dados Disco\n"
@@ -101,6 +96,7 @@ class DiscoController:
                 
                 while(tempo_segundos < self.quanto_tempo):
                     
+                    print(f"\n{tempo_segundos + 1})")
                     dados = self.model.buscar_dados_disco();
                     self.view.exibir_dados_disco(dados);
                     tempo_segundos += 1;
@@ -112,13 +108,7 @@ class DiscoController:
             conn.commit();
             conn.close();
         
-        except:
+        except Exception:
             print("Houve um erro ao inserir os dados no banco");
-
-model = Disco();
-view = DiscoView();
-banco = BancoMySql();
-dao = DiscoDao;
-
-teste = DiscoController(model, view, banco, dao);
-teste.iniciar()
+            traceback.print_exc()
+            

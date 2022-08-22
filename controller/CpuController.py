@@ -1,12 +1,7 @@
-from distutils.command.config import config
-from multiprocessing.util import info
-import sys
 import time;
-sys.path.append('..');
 from model.Cpu import Cpu;
 from view.CpuView import CpuView;
 from dao.CpuDao import CpuDao;
-from database.config import BancoMySql;
 
 class CpuController:
 
@@ -25,7 +20,7 @@ class CpuController:
     @staticmethod
     def pergunta_informacao_cpu():
         
-        print("Digite o número do que deseja acessar\n");
+        print("\n\nDigite o número do que deseja acessar\n");
         print(
             "(1) Especificações cpu\n"+
             "(2) Dados cpu média\n"+
@@ -121,6 +116,7 @@ class CpuController:
                 
                 while(tempo_segundos < self.quanto_tempo):
                     
+                    print(f"\n{tempo_segundos + 1})")
                     dados = self.associar_index_com_informacao();
                     tempo_segundos += 1;
                     if(self.enviar_banco):
@@ -132,18 +128,3 @@ class CpuController:
         
         except:
             print("Houve um erro ao inserir os dados no banco");
-        
-
-        
-
-
-            
-
-            
-model = Cpu();
-view = CpuView();
-database = BancoMySql();
-dao = CpuDao();
-
-programa = CpuController(model, view, database, dao);
-programa.iniciar();
