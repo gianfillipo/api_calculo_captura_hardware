@@ -5,16 +5,10 @@ from database.config import *;
 from controller.CpuController import *;
 
 #Memória
-from model.Memoria import Memoria;
-from view.MemoriaView import MemoriaView;
-from dao.MemoriaDao import MemoriaDao;
-from controller.MemoriaController import MemoriaController;
+from controller.MemoriaController import *;
 
 #Disco
-from model.Disco import Disco;
-from view.DiscoView import DiscoView;
-from dao.DiscoDao import DiscoDao;
-from controller.DiscoController import DiscoController;
+from controller.DiscoController import *;
 
 
 class App:

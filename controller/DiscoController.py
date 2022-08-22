@@ -1,5 +1,7 @@
-import traceback;
 import time;
+from model.Disco import Disco;
+from view.DiscoView import DiscoView;
+from dao.DiscoDao import DiscoDao;
 
 class DiscoController:
 
@@ -108,7 +110,6 @@ class DiscoController:
             conn.commit();
             conn.close();
         
-        except Exception:
+        except:
             print("Houve um erro ao inserir os dados no banco");
-            traceback.print_exc()
             

@@ -1,4 +1,7 @@
 import time;
+from model.Memoria import Memoria;
+from view.MemoriaView import MemoriaView;
+from dao.MemoriaDao import MemoriaDao;
 
 class MemoriaController:
 
