@@ -76,12 +76,13 @@ class HardwareController:
                     
                     print(f"\n{tempo_segundos + 1})")
                     data = self.model.obter_dados();
-                    print(data);
                     self.view.exibir_dados_hardware(data);
                     tempo_segundos += self.intervalo_tempo;
+                    
                     if(self.enviar_banco):
                         
                         for d in data:
+                    
                             self.dao[0].inserir_media_cpu(cursor, d);
                             self.dao[1].inserir_dados_disco(cursor, d);
                             self.dao[2].inserir_dados_memoria(cursor, d);
