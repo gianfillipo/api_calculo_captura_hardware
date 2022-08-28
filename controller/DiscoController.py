@@ -101,7 +101,7 @@ class DiscoController:
                     print(f"\n{tempo_segundos + 1})")
                     dados = self.model.buscar_dados_disco();
                     self.view.exibir_dados_disco(dados);
-                    tempo_segundos += 1;
+                    tempo_segundos += self.intervalo_tempo;
                     if(self.enviar_banco):
                         self.dao.inserir_dados_disco(cursor, dados);
 

@@ -117,7 +117,7 @@ class MemoriaController:
                     
                     print(f"\n{tempo_segundos + 1})")
                     dados = self.associar_index_com_informacao();
-                    tempo_segundos += 1;
+                    tempo_segundos += self.intervalo_tempo;
                     if(self.enviar_banco):
                         lista_dao = [
                             self.dao.inserir_dados_memoria,

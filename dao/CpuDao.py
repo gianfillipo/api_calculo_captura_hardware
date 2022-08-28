@@ -3,6 +3,7 @@ class CpuDao:
     @staticmethod
     def inserir_media_cpu(cursor, dados_cpu):
         query = "INSERT INTO Processador VALUES (null, %s, %s, %s, %s, %s)";
+        
         cursor.execute(
             query, 
             (dados_cpu['user'], 
@@ -12,6 +13,6 @@ class CpuDao:
              dados_cpu['freq'])
         )
 
-
+    
     
         

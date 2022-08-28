@@ -9,9 +9,9 @@ class CpuView:
         table_resultado.field_names = ["Núcleos-Lógicos", "Núcleos-Físicos", "Frequência-Máxima"]
         
         table_resultado.add_row([
-            informacoes_cpu['nucleos_logicos'],
-            informacoes_cpu['nucleos_fisicos'],
-            informacoes_cpu['freq_maxima'],
+            informacoes_cpu["nucleos_logicos"],
+            informacoes_cpu["nucleos_fisicos"],
+            informacoes_cpu["freq_maxima"],
         ])
 
         print('\n\n');

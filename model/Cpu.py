@@ -7,7 +7,7 @@ class Cpu:
         self.nucleos_fisicos = psutil.cpu_count(False);
         self._freq_maxima = psutil.cpu_freq().max;
     
-    def buscar_informacoes_cpu(self):
+    def buscar_informacoes(self):
         return {
             "nucleos_logicos" : self.nucleos_logicos,
             "nucleos_fisicos" : self.nucleos_fisicos,
@@ -15,7 +15,7 @@ class Cpu:
         }
 
     @staticmethod
-    def buscar_dados_media_cpu():
+    def buscar_dados_media():
         dados_cpu_tempo = psutil.cpu_times(percpu=False);
         dados_cpu_frequencia = psutil.cpu_freq();
         
@@ -30,7 +30,7 @@ class Cpu:
         return json_dados;
 
     @staticmethod
-    def buscar_dados_nucleos_cpu():
+    def buscar_dados_nucleos():
         dados_cpu_tempo = psutil.cpu_times(percpu=True);
         dados_cpu_frequencia = psutil.cpu_freq(percpu=True);
         dados_cpu = []

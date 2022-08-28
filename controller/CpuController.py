@@ -89,8 +89,8 @@ class CpuController:
 
     def associar_index_com_informacao(self):
         lista_informacoes = [
-            self.model.buscar_dados_media_cpu(),
-            self.model.buscar_dados_nucleos_cpu()
+            self.model.buscar_dados_media(),
+            self.model.buscar_dados_nucleos()
         ]
 
         lista_view = [
@@ -107,7 +107,7 @@ class CpuController:
         tempo_segundos = 0;
 
         if(self.tipo_informacao  == 1):
-            return self.view.exibir_informacoes_cpu(self.model.buscar_informacoes_cpu());
+            return self.view.exibir_informacoes_cpu(self.model.buscar_informacoes());
 
         conn = self.database.realizar_conexao_banco();
         
@@ -118,7 +118,7 @@ class CpuController:
                     
                     print(f"\n{tempo_segundos + 1})")
                     dados = self.associar_index_com_informacao();
-                    tempo_segundos += 1;
+                    tempo_segundos += self.intervalo_tempo;
                     if(self.enviar_banco):
                         self.dao.inserir_media_cpu(cursor, dados);
                     time.sleep(self.intervalo_tempo);
