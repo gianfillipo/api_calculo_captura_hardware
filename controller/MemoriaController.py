@@ -124,10 +124,10 @@ class MemoriaController:
                             self.dao.inserir_dados_swap
                         ]
                         lista_dao[self.tipo_informacao - 2](cursor, dados);   
-
+                    
+                    conn.commit();
                     time.sleep(self.intervalo_tempo);
             
-            conn.commit();
             conn.close();
         
         except:

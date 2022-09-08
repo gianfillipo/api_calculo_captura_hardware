@@ -2,7 +2,7 @@ class CpuDao:
     
     @staticmethod
     def inserir_media_cpu(cursor, dados_cpu):
-        query = "INSERT INTO Processador VALUES (null, %s, %s, %s, %s, %s)";
+        query = "INSERT INTO cpu_dinamica VALUES (null, 200, %s, %s, %s, %s, %s)";
         
         cursor.execute(
             query, 

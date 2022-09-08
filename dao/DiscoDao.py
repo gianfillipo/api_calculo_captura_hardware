@@ -2,7 +2,7 @@ class DiscoDao:
 
     @staticmethod
     def inserir_dados_disco(cursor, dados_disco):
-        query = "INSERT INTO Disco VALUES (null, %s, %s, %s, %s)";
+        query = "INSERT INTO disco_dinamico VALUES (null, 200, %s, %s, %s, %s)";
         cursor.execute(
             query, 
             (dados_disco["total"],

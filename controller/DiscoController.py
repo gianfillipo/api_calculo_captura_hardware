@@ -104,10 +104,10 @@ class DiscoController:
                     tempo_segundos += self.intervalo_tempo;
                     if(self.enviar_banco):
                         self.dao.inserir_dados_disco(cursor, dados);
-
+                    
+                    conn.commit();
                     time.sleep(self.intervalo_tempo);
             
-            conn.commit();
             conn.close();
         
         except:

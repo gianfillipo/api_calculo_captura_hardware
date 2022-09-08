@@ -88,9 +88,9 @@ class HardwareController:
                             self.dao[2].inserir_dados_memoria(cursor, d);
                             self.dao[2].inserir_dados_swap(cursor, d);
 
+                    conn.commit();
                     time.sleep(self.intervalo_tempo);
             
-            conn.commit();
             conn.close();
         
         except:

@@ -2,7 +2,7 @@ class MemoriaDao:
 
     @staticmethod
     def inserir_dados_memoria(cursor, dados_memoria):
-        query = "INSERT INTO Memoria VALUES (null, %s, %s, %s, %s, %s, %s, %s, %s)";
+        query = "INSERT INTO memoria_dinamica VALUES (null, 200, %s, %s, %s, %s, %s, %s, %s, %s)";
         cursor.execute(
             query,
             (dados_memoria["memoria_total"],
@@ -17,7 +17,7 @@ class MemoriaDao:
 
     @staticmethod
     def inserir_dados_swap(cursor, dados_swap):
-        query = "INSERT INTO Swap VALUES (null, %s, %s, %s, %s)"
+        query = "INSERT INTO swap_dinamica VALUES (null, 200, %s, %s, %s, %s)"
         cursor.execute(
             query,
             (dados_swap["swap_total"],
