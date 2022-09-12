@@ -3,7 +3,6 @@ sys.path.append('..');
 from helper.Conversao import Conversao;
 import psutil;
 
-
 class Disco:    
     
     def __init__(self):        
